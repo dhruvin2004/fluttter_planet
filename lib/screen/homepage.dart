@@ -1,9 +1,11 @@
 
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:model_viewer_plus/model_viewer_plus.dart';
+import 'package:planet_app/screen/detail.dart';
 
 import '../appstring.dart';
 
@@ -71,27 +73,36 @@ class _PlanetPageState extends State<PlanetPage> with SingleTickerProviderStateM
                                   borderRadius: BorderRadius.circular(15),
                                 ),
                                 child:  Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
+
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    SizedBox(height: 50,),
-                                    Text(e['name']),
+                                    SizedBox(height: 120,),
+                                    Text(e['name'],style: GoogleFonts.poppins(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 22),),
+                                    SizedBox(height: 10,),
+                                    AutoSizeText(overflow: TextOverflow.ellipsis,e['des'].toString(),style: GoogleFonts.poppins(color: Colors.grey,fontWeight: FontWeight.normal,fontSize: 14),),
                                   ],
                                 ),
                               ),
                             ),
                             Align(
                               alignment: Alignment.bottomCenter,
-                              child: Container(
-                                height: 70,
-                                width: 70,
-                                alignment: Alignment.center,
-                                decoration:  BoxDecoration(
-                                  border: Border.all(color: Colors.white,width: 6),
-                                  color: Colors.blue,
-                                  shape: BoxShape.circle,
+                              child: GestureDetector(
+                                onTap: (){
+                                  setState(() {
+                                    Navigator.push(context, MaterialPageRoute(builder: (context)=> Details(index: AppString.planets.indexOf(e))));
+                                  });
+                                },
+                                child: Container(
+                                  height: 70,
+                                  width: 70,
+                                  alignment: Alignment.center,
+                                  decoration:  BoxDecoration(
+                                    border: Border.all(color: Colors.white,width: 6),
+                                    color: Colors.blue,
+                                    shape: BoxShape.circle,
+                                  ),
+                                  child: Icon(Icons.arrow_forward_ios_outlined,color: Colors.white,),
                                 ),
-                                child: Icon(Icons.arrow_forward_ios_outlined,color: Colors.white,),
                               ),
                             ),
                             Container(
@@ -101,17 +112,7 @@ class _PlanetPageState extends State<PlanetPage> with SingleTickerProviderStateM
                                 image: DecorationImage(image: AssetImage('${e['img']}'))
                               ),
                             )
-                            // SizedBox(
-                            //   height: 150,
-                            //   width: 150,
-                            //   child: ModelViewer(
-                            //     src: 'images/Mercury_1_4878.glb',
-                            //     ar: true,
-                            //     autoRotate: true,
-                            //     cameraControls: true,
-                            //     disablePan: false,
-                            //   ),
-                            // ),
+
                           ]),
                         ),
                       ).toList(),
