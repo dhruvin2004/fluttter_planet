@@ -19,6 +19,8 @@ class PlanetPage extends StatefulWidget {
 class _PlanetPageState extends State<PlanetPage> with SingleTickerProviderStateMixin{
   @override
   Widget build(BuildContext context) {
+    double h = MediaQuery.of(context).size.height;
+    double w = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.black,
@@ -27,14 +29,14 @@ class _PlanetPageState extends State<PlanetPage> with SingleTickerProviderStateM
         ),),
       ),
       body: Container(
-        decoration: const BoxDecoration(
+        decoration:  BoxDecoration(
           image: DecorationImage(image: AssetImage('assets/bg_stars.png')),
           gradient: LinearGradient(
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
               colors: [
                 Colors.black,
-                Colors.blueAccent,
+                Colors.blueAccent.shade400,
               ]
           ),
         ),
@@ -66,14 +68,13 @@ class _PlanetPageState extends State<PlanetPage> with SingleTickerProviderStateM
                               top: 60,
                               child: Container(
                                 height: 300,
-                                width: 250,
+                                width: 210,
                                 padding: EdgeInsets.all(15),
                                 decoration: BoxDecoration(
                                   color: Colors.white,
                                   borderRadius: BorderRadius.circular(15),
                                 ),
                                 child:  Column(
-
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     SizedBox(height: 120,),
