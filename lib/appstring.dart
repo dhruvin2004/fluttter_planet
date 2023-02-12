@@ -17,7 +17,8 @@ class AppString {
       'type' :'Terrestrial',
       'radius' : "2439.4 KM",
       'des':'Mercury—the smallest planet in our solar system and closest to the Sun—is only slightly larger than Earth iss Moon. Mercury is the fastest planet, zipping around the Sun every 88 Earth days.',
-    }, {
+    },
+    {
       'name': 'Venus',
       'file': 'images/Venus(surface)_1_12103.glb',
       'img': 'assets/img_venus.png',
@@ -25,7 +26,8 @@ class AppString {
       'type' :'Terrestrial',
       'radius' : "6051.8 KM",
       'des':'Venus spins slowly in the opposite direction from most planets. A thick atmosphere traps heat in a runaway greenhouse effect, making it the hottest planet in our solar system.',
-    }, {
+    },
+    {
       'name': 'Mars',
       'file': 'images/Mars_1_6792.glb',
       'img': 'assets/img_mars.png',
@@ -33,7 +35,8 @@ class AppString {
       'type' :'Terrestrial',
       'radius' : "3396.2 KM",
       'des':'Mars is a dusty, cold, desert world with a very thin atmosphere. There is strong evidence Mars was—billions of years ago—wetter and warmer, with a thicker atmosphere.',
-    }, {
+    },
+    {
       'name': 'Jupiter',
       'file': 'images/Jupiter_1_142984.glb',
       'img': 'assets/jupiter.png',
